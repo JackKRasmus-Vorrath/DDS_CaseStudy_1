@@ -22,7 +22,7 @@
 
 library(ggplot2)
 
-ABV_v_IBU <- ggplot(merged_Med_ABV_IBU_byState, aes(IBU, ABV, group = State)) + geom_col(aes(fill = State), position = "dodge") + geom_text(aes(label = State), position = "dodge", size = 2)
+ABV_v_IBU <- ggplot(merged_Med_ABV_IBU_byState, aes(IBU, ABV, group = State)) + geom_col(aes(fill = State), position = "dodge") + geom_text(aes(label = State), position = "dodge", size = 2) + labs(title = "Median ABV|IBU by State", subtitle = "Records with Missing Values Excluded")
 ABV_v_IBU
 
 ###With a few outliers, the figure demonstrates a roughly uniform distribution of ABV to IBU across States. Note that records with missing ABV or IBU values are excluded.
@@ -30,7 +30,7 @@ ABV_v_IBU
 
 ##Using the merged Beers and Breweries data frame, a scatterplot of Alcohol-by-Volume and International Bitterness Units values colored and labeled by State is produced for comparison.
 
-ABV_v_IBU_Scatter <- ggplot(renamed_Beer_Brew, aes(IBU, ABV, label = State)) + geom_text(size = 1, check_overlap = T) + geom_label(aes(fill = State), color = "black", label.padding = unit(.1, "lines"), label.size = .1)
+ABV_v_IBU_Scatter <- ggplot(renamed_Beer_Brew, aes(IBU, ABV, label = State)) + geom_text(size = 1, check_overlap = T) + geom_label(aes(fill = State), color = "black", label.padding = unit(.1, "lines"), label.size = .1) + labs(title = "ABV|IBU by State", subtitle = "Records with Missing Values Excluded")
 ABV_v_IBU_Scatter
 
 ###Excepting the outliers, a relatively strong quadratic negative correlation is identifiable in this figure, with the rate of increase in ABV slowing as IBU increases. As before, the figure omits records with missing ABV or IBU values, including the ABV maximum discovered in the Analysis procedures.

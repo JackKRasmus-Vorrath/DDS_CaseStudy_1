@@ -462,7 +462,7 @@ merged_Med_ABV_IBU_byState
 ```
 
 ```r
-ABV_v_IBU <- ggplot(merged_Med_ABV_IBU_byState, aes(IBU, ABV, group = State)) + geom_col(aes(fill = State), position = "dodge") + geom_text(aes(label = State), position = "dodge", size = 2)
+ABV_v_IBU <- ggplot(merged_Med_ABV_IBU_byState, aes(IBU, ABV, group = State)) + geom_col(aes(fill = State), position = "dodge") + geom_text(aes(label = State), position = "dodge", size = 2) + labs(title = "Median ABV|IBU by State", subtitle = "Records with Missing Values Excluded")
 ABV_v_IBU
 ```
 
@@ -663,7 +663,7 @@ ABV_Stats
 ```r
 library(ggplot2)
 
-ABV_v_IBU_Scatter <- ggplot(renamed_Beer_Brew, aes(IBU, ABV, label = State)) + geom_text(size = 1, check_overlap = T) + geom_label(aes(fill = State), color = "black", label.padding = unit(.1, "lines"), label.size = .1)
+ABV_v_IBU_Scatter <- ggplot(renamed_Beer_Brew, aes(IBU, ABV, label = State)) + geom_text(size = 1, check_overlap = T) + geom_label(aes(fill = State), color = "black", label.padding = unit(.1, "lines"), label.size = .1) + labs(title = "ABV|IBU by State", subtitle = "Records with Missing Values Excluded")
 ABV_v_IBU_Scatter
 ```
 
